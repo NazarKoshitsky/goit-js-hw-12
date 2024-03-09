@@ -4,27 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 11</title>
+    <title>Java Script 12</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <form class="search-form" id="searchForm">
+    <form class="form">
       <input
+        class="form-input"
+        name="query"
         type="text"
-        name="searchWord"
-        class="search-input"
         placeholder="Search images..."
       />
-      <button class="search-btn" type="submit">Search</button>
+      <button class="submit-btn" type="submit">Search</button>
     </form>
 
-    <div class="gallery"></div>
-    <div class="loader"></div>
+    <button class="load-btn" type="button" data-action="load-button">
+      <span class="label">Load more</span>
+    </button>
 
-    <script type="module" src="./main.js"></script>
+    <span class="loader"></span>
+
+    <div class="gallery"></div>
+
+    <script type="module" src="./main.js" defer></script>
   </body>
 </html>
