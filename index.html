@@ -4,31 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Java Script 12</title>
+    <title>hm 12</title>
     
+ 
     <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-5401a4b0.js">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-cf6910df.css">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-83b94c73.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-483db976.js">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-a51daae5.css">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-ff0a4376.css">
   </head>
   <body>
-    <form class="form">
-      <input
-        class="form-input"
-        name="query"
-        type="text"
-        placeholder="Search images..."
-      />
-      <button class="submit-btn" type="submit">Search</button>
+    <form class="form" >
+      <input type="text" name="search"  />
+      <button class="button" type="submit">Search</button>
     </form>
+    <span style="display: none;" class="loader"></span>
 
-    <button class="load-btn" type="button" data-action="load-button">
-      <span class="label">Load more</span>
-    </button>
+<ul class="gallery">
+</ul>
+<div class="container">
+  <button style="display: none;" class="button load-more"> Load more</button>
 
-    <span class="loader"></span>
-
-    <div class="gallery"></div>
+</div>
+<span style="display: none;" class="loader"></span>
 
     
   </body>
