@@ -1,39 +1,21 @@
 'use strict';
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
-import axios from "axios";
-
-const KEY = "42773289-557706e6fefb377aba1f00ed4";
-const URL = "https://pixabay.com/api/";
-
-const loader = document.querySelector('.loader');
-const loadMoreBtn = document.querySelector('.load-btn');
-const searchForm = document.querySelector('.form');
-
-export async function searchImages(QUERY, perPage, page) {
-  
-  const LINK = `${URL}?key=${KEY}&q=${QUERY}&image_type=photo&orientation=horizontal&savesearch=true&page=${page}&per_page=${perPage}`;
+import axios from 'axios';
+export const limit = 15
 
 
-  loader.style.display = 'block';
+export async function fetchIcon(query, page) {
+  const params = new URLSearchParams({
+      key: '42773289-557706e6fefb377aba1f00ed4',
+      q: query,
+      per_page: limit,
+      page: page
+  });
 
-  try {
-    const response = await axios.get(LINK);
+  const BASE_URL = 'https://pixabay.com/api/';
+  const response = await axios.get(`${BASE_URL}?${params}`);
 
-    if (response.data.hits.length === 0) {
-      iziToast.error({
-        title: 'Error',
-        timeout: 2000,
-        position: 'bottomRight',
-        message: 'Sorry, there are no images matching your search query. Please try again!',
-      });
-      loadMoreBtn.style.display = 'none';
-      loader.style.display = 'none';
-      searchForm.reset()
-    }
-    return response.data;
-
-  } catch (error) {
-    console.error(`Error: ${error}`);
-  } 
+  return {
+      hits: response.data.hits,
+      totalHits: response.data.totalHits
+  };
 }

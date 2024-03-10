@@ -4,28 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Java Script 12</title>
+    <title>hm 12</title>
     <link rel="stylesheet" href="./css/styles.css" />
+ 
   </head>
   <body>
-    <form class="form">
-      <input
-        class="form-input"
-        name="query"
-        type="text"
-        placeholder="Search images..."
-      />
-      <button class="submit-btn" type="submit">Search</button>
+    <form class="form" >
+      <input type="text" name="search"  />
+      <button class="button" type="submit">Search</button>
     </form>
+    <span style="display: none;" class="loader"></span>
 
-    <button class="load-btn" type="button" data-action="load-button">
-      <span class="label">Load more</span>
-    </button>
+<ul class="gallery">
+</ul>
+<div class="container">
+  <button style="display: none;" class="button load-more"> Load more</button>
 
-    <span class="loader"></span>
+</div>
+<span style="display: none;" class="loader"></span>
 
-    <div class="gallery"></div>
-
-    <script type="module" src="./main.js" defer></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
